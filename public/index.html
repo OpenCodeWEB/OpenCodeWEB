@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenCodeWEB — Self-Sovereign Open Source</title>
+<meta name="description" content="All OpenCodeWEB open-source projects — sovereign data mesh, support gateway, money gateway, AI agents. Free, MIT, Dev default.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  body { font-family: ui-sans-serif, system-ui, sans-serif; }
+  .mono { font-family: ui-monospace, monospace; }
+  .grid-bg { background-image: linear-gradient(rgba(148,163,184,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.06) 1px, transparent 1px); background-size: 42px 42px; }
+  .card { transition: transform .15s ease, border-color .15s ease; }
+  .card:hover { transform: translateY(-2px); }
+</style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen antialiased">
+
+<header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-3 shrink-0">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-500 via-fuchsia-500 to-cyan-400 flex items-center justify-center font-bold text-slate-950"><i class="fa-solid fa-code-branch text-sm"></i></div>
+      <div>
+        <div class="font-extrabold text-lg leading-none tracking-tight bg-gradient-to-r from-violet-400 via-fuchsia-300 to-cyan-300 bg-clip-text text-transparent">OpenCodeWEB</div>
+        <div class="text-xs mono text-slate-500">open source · Dev default</div>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300">
+      <a href="#flagship" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800">Flagship</a>
+      <a href="#repos" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800">All Repos <span id="repo-count" class="mono text-xs text-slate-500"></span></a>
+      <a href="#principles" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800">Principles</a>
+    </nav>
+    <a href="https://github.com/OpenCodeWEB" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-sm"><i class="fa-brands fa-github"></i><span class="hidden sm:inline">GitHub</span></a>
+  </div>
+</header>
+
+<section class="grid-bg border-b border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 py-16 text-center">
+    <div class="flex justify-center gap-2 mb-4 text-xs">
+      <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/25">Self-sovereign</span>
+      <span class="px-3 py-1 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/25">Unrestricted</span>
+      <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/25">Perpetual</span>
+      <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/25">AI-native</span>
+    </div>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Every project.<br><span class="bg-gradient-to-r from-violet-400 via-fuchsia-300 to-cyan-300 bg-clip-text text-transparent">Open source, forever.</span></h1>
+    <p class="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">No gatekeepers, no artificial limits, no locked-in silos. From sovereign data mesh to decentralized money — <strong class="text-slate-200">one address, every technology.</strong></p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="#flagship" class="px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 text-white font-bold">Explore Projects</a>
+      <a href="https://github.com/OpenCodeWEB" target="_blank" class="px-6 py-3 rounded-xl border border-slate-700 text-slate-300">GitHub Org</a>
+    </div>
+    <div id="stats" class="mt-8 flex flex-wrap justify-center gap-2 text-xs mono text-slate-500"></div>
+  </div>
+</section>
+
+<section id="flagship" class="max-w-7xl mx-auto px-4 py-14">
+  <h2 class="text-2xl font-extrabold tracking-tight mb-2">Flagship Projects</h2>
+  <p class="text-sm text-slate-500 mb-8">The core sovereign stack — data, support, money, agents.</p>
+  <div id="flagship-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+</section>
+
+<section id="repos" class="border-t border-slate-800 bg-slate-900/30">
+  <div class="max-w-7xl mx-auto px-4 py-14">
+    <div class="flex flex-wrap items-center gap-3 mb-2">
+      <h2 class="text-2xl font-extrabold tracking-tight">All Repositories</h2>
+      <input id="repo-search" placeholder="Filter repositories…" class="ml-auto mono text-xs bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-200 w-56">
+    </div>
+    <p class="text-sm text-slate-500 mb-8">Every OpenCodeWEB repo — <code class="mono text-violet-300">Dev</code> is the default branch, always. <span id="live-note" class="text-slate-600"></span></p>
+    <div id="repo-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3"></div>
+  </div>
+</section>
+
+<section id="principles" class="max-w-7xl mx-auto px-4 py-14">
+  <h2 class="text-2xl font-extrabold tracking-tight mb-8">Principles</h2>
+  <div class="grid md:grid-cols-5 gap-4 text-sm">
+    <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-5"><div class="font-bold text-emerald-300">Self-sovereign</div><p class="text-slate-400 mt-1 text-xs">You own your data, identity, and compute.</p></div>
+    <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-5"><div class="font-bold text-violet-300">Unrestricted</div><p class="text-slate-400 mt-1 text-xs">No artificial limits on context, scale, or autonomy.</p></div>
+    <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-5"><div class="font-bold text-cyan-300">Perpetual</div><p class="text-slate-400 mt-1 text-xs">Usable, portable, and open forever.</p></div>
+    <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-5"><div class="font-bold text-fuchsia-300">AI-native</div><p class="text-slate-400 mt-1 text-xs">Designed around AI from the kernel up.</p></div>
+    <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-5"><div class="font-bold text-amber-300">Open-source</div><p class="text-slate-400 mt-1 text-xs">MIT — fork, self-host, no vendor lock.</p></div>
+  </div>
+</section>
+
+<footer class="border-t border-slate-800 py-10">
+  <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-cyan-400 flex items-center justify-center font-bold text-slate-950 text-sm"><i class="fa-solid fa-code-branch"></i></div>
+      <span class="text-sm text-slate-400">OpenCodeWEB — MIT · By <a href="https://github.com/ABsUP" target="_blank" class="text-violet-300 hover:underline">@ABsUP</a></span>
+    </div>
+    <div class="flex items-center gap-4 text-sm text-slate-500">
+      <a href="https://gdbx.pages.dev" class="hover:text-violet-300">GDBx</a>
+      <a href="https://dsgx.pages.dev" class="hover:text-emerald-300">DSGx</a>
+      <a href="https://gdmx.pages.dev" class="hover:text-amber-300">GDMx</a>
+      <span class="mono text-xs">opencodeweb.pages.dev</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const FLAGSHIP = [
+  { name: "OS", repo: "OS", icon: "fa-solid fa-microchip", color: "violet", desc: "Master monorepo — kernel, AiA Master Intelligence Engine, edge gateway, workers, portal.", live: "https://opencodeweb.pages.dev", liveLabel: "opencodeweb.pages.dev" },
+  { name: "AiA", repo: "AiA", icon: "fa-solid fa-brain", color: "fuchsia", desc: "Master Intelligence Engine — unlimited context, zero-constraint governance, federated learning.", live: null },
+  { name: "GDBx", repo: "GDBX", icon: "fa-solid fa-database", color: "violet", desc: "Global Decentralized DataBase Sync — *.gdbx namespace, DID + PoW, CRDT sync, hybrid mesh, TLD, Dashboard.", live: "https://gdbx.pages.dev", liveLabel: "gdbx.pages.dev" },
+  { name: "DSGx", repo: "DSGx", icon: "fa-solid fa-hand-holding-heart", color: "emerald", desc: "Decentralized Support Gateway — dsgx.pages.dev/<username>, crypto or card, direct to Web3 wallet.", live: "https://dsgx.pages.dev", liveLabel: "dsgx.pages.dev" },
+  { name: "GDMx", repo: "GDMx", icon: "fa-solid fa-money-bill-transfer", color: "amber", desc: "Global Decentralized Money Tx Gateway — 500+ wallets, 7 on-ramps, 8 networks, 0% fee, gasless.", live: "https://gdmx.pages.dev", liveLabel: "gdmx.pages.dev" },
+  { name: "MCP", repo: "MCP", icon: "fa-solid fa-plug", color: "cyan", desc: "Model Context Protocol server — 8 tools bridging AI assistants to the sovereign mesh.", live: null, liveLabel: "npm i @opencodeweb/mcp" },
+  { name: "A2A", repo: "A2A", icon: "fa-solid fa-arrows-left-right", color: "cyan", desc: "Agent-to-Agent protocol — JSON-RPC agent with 4 live skills (sync, names, pay, support).", live: null, liveLabel: ":8788" },
+  { name: "GunX", repo: "GunX", icon: "fa-solid fa-tower-broadcast", color: "rose", desc: "Serverless GunDB relay — realtime P2P sync, offline-first, SEA end-to-end encryption.", live: "https://gunx.pages.dev", liveLabel: "gunx.pages.dev" },
+  { name: "UI", repo: "UI", icon: "fa-solid fa-layer-group", color: "slate", desc: "Enterprise-grade OpenCode ecosystem plugin and hybrid infrastructure manager.", live: null },
+];
+const ALL_REPOS = ["A2A","ABsNOTE","AddonHub","AG","AiA","AnyThingLLM","BlenDer","CommunityHub","DB","DoMain","DotNet","DSGx","FFmPeg","Flutter","GDBx","GDMx","GIMP","GitHubApp","Gun","GunX","Inkscape","js.org","KdenLive","MCP","Model","OpenClaw","OpenCode","OpenCodeWEB","OpenHands","OpenNotebook","OS","PodMan","PRD","Roadmap","SandBox","Servers","TeamSwarm","UI","VsCode","xVoice"];
+
+const colorMap = { violet: "violet", fuchsia: "fuchsia", emerald: "emerald", amber: "amber", cyan: "cyan", rose: "rose", slate: "slate" };
+
+function flagshipCard(p) {
+  const c = colorMap[p.color] || "slate";
+  return `<div class="card rounded-2xl border border-slate-800 bg-slate-900/50 p-6 hover:border-${c}-500/40">
+    <div class="flex items-center gap-3"><i class="${p.icon} text-${c}-400 text-2xl"></i><h3 class="font-extrabold text-xl">${p.name}</h3></div>
+    <p class="text-sm text-slate-400 mt-3 min-h-[3.5rem]">${p.desc}</p>
+    <div class="flex flex-wrap gap-2 mt-4">
+      ${p.live ? `<a href="${p.live}" target="_blank" class="px-3 py-1.5 rounded-lg bg-${c}-600 hover:bg-${c}-500 text-white text-xs font-semibold">Live ↗</a>` : (p.liveLabel ? `<span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs mono">${p.liveLabel}</span>` : "")}
+      <a href="https://github.com/OpenCodeWEB/${p.repo}" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs"><i class="fa-brands fa-github mr-1"></i>Source</a>
+    </div>
+  </div>`;
+}
+
+async function loadRepos() {
+  let meta = {};
+  try {
+    const r = await fetch("https://api.github.com/orgs/OpenCodeWEB/repos?per_page=100");
+    const j = await r.json();
+    if (Array.isArray(j)) for (const repo of j) meta[repo.name] = { stars: repo.stargazers_count, lang: repo.language, updated: repo.updated_at?.slice(0, 10) };
+    document.getElementById("live-note").textContent = "· live from GitHub API";
+  } catch { document.getElementById("live-note").textContent = "· offline snapshot"; }
+  const grid = document.getElementById("repo-grid");
+  const render = (filter = "") => {
+    const list = ALL_REPOS.filter((n) => n.toLowerCase().includes(filter.toLowerCase()));
+    document.getElementById("repo-count").textContent = `(${list.length})`;
+    grid.innerHTML = list.map((n) => {
+      const m = meta[n] || {};
+      return `<a href="https://github.com/OpenCodeWEB/${n}" target="_blank" class="card rounded-xl border border-slate-800 bg-slate-950/60 p-4 hover:border-violet-500/40 block">
+        <div class="flex items-center gap-2"><i class="fa-brands fa-github text-slate-500"></i><span class="font-semibold text-sm">${n}</span>
+        ${m.stars ? `<span class="ml-auto text-xs text-amber-300">★ ${m.stars}</span>` : ""}</div>
+        <div class="text-xs text-slate-500 mt-2 mono">${m.lang || ""} ${m.updated ? "· " + m.updated : ""} · Dev</div>
+      </a>`;
+    }).join("");
+  };
+  render();
+  document.getElementById("repo-search").addEventListener("input", (e) => render(e.target.value));
+  const flagshipNames = new Set(FLAGSHIP.map((p) => p.repo));
+  const total = ALL_REPOS.length;
+  document.getElementById("stats").innerHTML = `<span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700">${total} repositories</span><span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700">${FLAGSHIP.length} flagship</span><span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700">Dev default · MIT</span>`;
+}
+
+document.getElementById("flagship-grid").innerHTML = FLAGSHIP.map(flagshipCard).join("");
+loadRepos();
+</script>
+</body>
+</html>
